@@ -1,0 +1,13 @@
+age = input("What is your current age? ")
+
+LARGEST_YEAR = 90
+YEAR_DAYS = 365
+YEAR_WEEKS = 52
+YEAR_MONTHS = 12
+
+years_left = LARGEST_YEAR - int(age)
+days_left = years_left * YEAR_DAYS
+weeks_left = years_left * YEAR_WEEKS
+months_left = years_left * YEAR_MONTHS
+
+print(f"You have {days_left} days, {weeks_left} weeks, and {months_left} left.")
