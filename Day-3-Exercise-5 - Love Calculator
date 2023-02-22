@@ -1,0 +1,97 @@
+print("Welcome to the Love Calculator!")
+
+name1 = input("What is your name? \n")
+name2 = input("What is their name? \n")
+
+# turn name 1 and name 2 to lower case
+name1_lower_case = name1.lower()
+name2_lower_case = name2.lower()
+
+# count letters in name 1 from word true
+name1_true_countt = name1_lower_case.count("t")
+name1_true_countr = name1_lower_case.count("r")
+name1_true_countu = name1_lower_case.count("u")
+name1_true_counte = name1_lower_case.count("e")
+
+# name 1 total count from word true
+name_1_true_sum = name1_true_countt + name1_true_countr + name1_true_countu + name1_true_counte
+
+# count letters in name 2 from word true
+
+name2_true_countt = name2_lower_case.count("t")
+name2_true_countr = name2_lower_case.count("r")
+name2_true_countu = name2_lower_case.count("u")
+name2_true_counte = name2_lower_case.count("e")
+
+# name 2 total count from word true
+name_2_true_sum = name2_true_countt + name2_true_countr + name2_true_countu + name2_true_counte
+
+# name 1 and name 2 total count from word true
+sum_true_name1_name2 = name_1_true_sum + name_2_true_sum
+
+# count letters in name 1 from word love
+name1_love_countl = name1_lower_case.count("l")
+name1_love_counto = name1_lower_case.count("o")
+name1_love_countv = name1_lower_case.count("v")
+name1_love_counte = name1_lower_case.count("e")
+
+# name 1 count from word love
+name_1_love_sum = name1_love_countl + name1_love_counto + name1_love_countv + name1_love_counte
+
+# count letters in name 2 from word love
+name2_love_countl = name2_lower_case.count("l")
+name2_love_counto = name2_lower_case.count("o")
+name2_love_countv = name2_lower_case.count("v")
+name2_love_counte = name2_lower_case.count("e")
+
+# name 2 count from word love
+name_2_love_sum = name2_love_countl + name2_love_counto + name2_love_countv + name2_love_counte
+
+# name 1 and name 2 total count from word love
+sum_love_name1_name2 = name_1_love_sum + name_2_love_sum
+
+# adding score from word true and word love
+love_score = f"{sum_true_name1_name2}{sum_love_name1_name2}"
+
+love_score = int(love_score)
+
+if love_score < 10 or love_score > 90:
+    print(f"Your score is {love_score}, you go together like coke and mentos.")
+elif 40 <= love_score <= 50:
+    print(f"Your score is {love_score}, you are alright together.")
+else:
+    print(f"Your score is {love_score}.")
+ 
+# Optimised solution
+
+print("Welcome to the Love Calculator!")
+
+name1 = input("What is your name? \n").lower()
+name2 = input("What is their name? \n").lower()
+
+combined_names = name1 + name2
+
+t = combined_names.count("t")
+r = combined_names.count("r")
+u = combined_names.count("u")
+e = combined_names.count("e")
+
+true = t + r + u + e
+
+l = combined_names.count("l")
+o = combined_names.count("o")
+v = combined_names.count("v")
+e = combined_names.count("e")
+
+love = l + o + v + e
+
+love_score = f"{true}{love}"
+
+love_score = int(love_score)
+
+if love_score < 10 or love_score > 90:
+    print(f"Your score is {love_score}, you go together like coke and mentos.")
+elif love_score >= 40 and love_score <= 50:
+    print(f"Your score is {love_score}, you are alright together.")
+else:
+    print(f"Your score is {love_score}.")
