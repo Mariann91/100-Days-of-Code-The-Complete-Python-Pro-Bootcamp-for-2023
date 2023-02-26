@@ -41,6 +41,9 @@ elif choice == 2:
     print()
     print("Scissors")
     print(scissors)
+else:
+    print("Invalid number. You lose!")
+    quit()
 
 computer_choice = random.randint(0, 2)
 computer_choice_list = [rock, paper, scissors]
@@ -57,7 +60,7 @@ elif computer_choice == 1:
 elif computer_choice == 2:
     print(computer_choice_list[2])
 
-if choice == 0 and computer_choice == 0 or choice == 1 and computer_choice == 1 or choice == 2 and computer_choice == 2:
+if choice == computer_choice:
     print("Draw")
 elif choice == 0 and computer_choice == 1:
     print("You lose")
