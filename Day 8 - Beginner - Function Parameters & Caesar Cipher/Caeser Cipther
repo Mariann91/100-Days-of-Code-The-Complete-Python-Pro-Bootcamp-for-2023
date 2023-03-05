@@ -1,0 +1,46 @@
+from caser_art import logo
+
+print(logo)
+
+alphabet =\
+    ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+     'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+     'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+     'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+
+def caesar(start_word, text_shift, text_direction):
+    end_word = ""
+
+    if text_direction == "decode":
+        text_shift *= -1
+
+    for char in start_word:
+
+        if char in alphabet:
+            char = alphabet.index(char)
+            new_position = char + text_shift
+            end_word += alphabet[new_position]
+        else:
+            end_word += char
+
+    print(f'Here is your {direction}d result: "{end_word}".')
+
+
+end_of_program = False
+
+while not end_of_program:
+
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
+    shift = shift % 26
+
+    caesar(start_word=text, text_shift=shift, text_direction=direction)
+
+    choice = input("Do want to use Cipher again: Yes or No?\n").lower()
+
+    if choice == "no":
+        end_of_program = True
+else:
+    print("Goodbye")
