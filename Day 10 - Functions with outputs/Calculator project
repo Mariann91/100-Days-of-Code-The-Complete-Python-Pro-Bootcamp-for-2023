@@ -15,6 +15,7 @@ logo = """
 |_____________________|
 """
 
+
 def add(n1, n2):
     return n1 + n2
 
@@ -40,6 +41,7 @@ operators = {
 
 
 def calculation():
+
     print(logo)
 
     should_continue = True
@@ -50,6 +52,7 @@ def calculation():
         print(operator)
 
     while should_continue:
+    
         operator_choice = input("Pick an operator from the line above: ")
 
         num2 = int(input("What is the second number: "))
