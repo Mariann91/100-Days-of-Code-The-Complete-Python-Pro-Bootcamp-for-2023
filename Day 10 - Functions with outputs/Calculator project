@@ -1,0 +1,69 @@
+logo = """
+ _____________________
+|  _________________  |
+| | Pythonista   0. | |  .----------------.  .----------------.  .----------------.  .----------------. 
+| |_________________| | | .--------------. || .--------------. || .--------------. || .--------------. |
+|  ___ ___ ___   ___  | | |     ______   | || |      __      | || |   _____      | || |     ______   | |
+| | 7 | 8 | 9 | | + | | | |   .' ___  |  | || |     /  \     | || |  |_   _|     | || |   .' ___  |  | |
+| |___|___|___| |___| | | |  / .'   \_|  | || |    / /\ \    | || |    | |       | || |  / .'   \_|  | |
+| | 4 | 5 | 6 | | - | | | |  | |         | || |   / ____ \   | || |    | |   _   | || |  | |         | |
+| |___|___|___| |___| | | |  \ `.___.'\  | || | _/ /    \ \_ | || |   _| |__/ |  | || |  \ `.___.'\  | |
+| | 1 | 2 | 3 | | x | | | |   `._____.'  | || ||____|  |____|| || |  |________|  | || |   `._____.'  | |
+| |___|___|___| |___| | | |              | || |              | || |              | || |              | |
+| | . | 0 | = | | / | | | '--------------' || '--------------' || '--------------' || '--------------' |
+| |___|___|___| |___| |  '----------------'  '----------------'  '----------------'  '----------------' 
+|_____________________|
+"""
+
+def add(n1, n2):
+    return n1 + n2
+
+
+def subtract(n1, n2):
+    return n1 - n2
+
+
+def multiply(n1, n2):
+    return n1 * n2
+
+
+def divide(n1, n2):
+    return n1 / n2
+
+
+operators = {
+    "+" : add,
+    "-" : subtract,
+    "*" : multiply,
+    "/" : divide,
+}
+
+
+def calculation():
+    print(logo)
+
+    should_continue = True
+
+    num1 = int(input("What is the first number: "))
+
+    for operator in operators:
+        print(operator)
+
+    while should_continue:
+        operator_choice = input("Pick an operator from the line above: ")
+
+        num2 = int(input("What is the second number: "))
+
+        calculation_function = operators[operator_choice]
+
+        result = calculation_function(num1, num2)
+
+        print(f"{num1} {operator_choice} {num2} = {result}")
+
+        if input(f"To continue the calculation with {result} pick 'y' or 'n' to do new calculation: ") == "y":
+            num1 = result
+        else:
+            should_continue = False
+            calculation()
+
+calculation()
